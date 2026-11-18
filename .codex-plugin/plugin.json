@@ -2,5 +2,9 @@
   "name": "ci-triage",
   "version": "0.1.0",
   "description": "One command from \"CI is red\" to the failing step and the extracted error, for GitHub Actions and GitLab CI.",
-  "skills": "./skills"
+  "skills": "./skills",
+  "author": {
+    "name": "Ibrahim M. Badr",
+    "url": "https://github.com/ibrahimbdr"
+  }
 }
