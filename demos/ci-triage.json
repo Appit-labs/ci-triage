@@ -1,0 +1,18 @@
+{
+  "skill": "ci-triage",
+  "out": "ci-triage/demo.gif",
+  "caption": "ci-triage \u2014 10k-line log to 4 lines",
+  "steps": [
+    {
+      "cmd": "ci.py extract ci.log",
+      "phase": "extract",
+      "out": [
+        "Collecting dependencies...",
+        "tests/test_orders.py::test_total_with_tax FAILED",
+        "E   AssertionError: expected 1100, got 1000",
+        "1 failed, 287 passed in 12.4s",
+        "##[error]Process completed with exit code 1"
+      ]
+    }
+  ]
+}
