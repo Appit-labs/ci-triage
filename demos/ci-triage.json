@@ -1,17 +1,35 @@
 {
   "skill": "ci-triage",
-  "out": "ci-triage/demo.gif",
-  "caption": "ci-triage \u2014 10k-line log to 4 lines",
+  "prompt": "you@laptop:~/checkout-api",
   "steps": [
     {
+      "cmd": "wc -l ci.log",
+      "phase": "the problem",
+      "note": "nobody reads this; you need four lines out of it",
+      "out": [
+        "10247 ci.log"
+      ]
+    },
+    {
       "cmd": "ci.py extract ci.log",
-      "phase": "extract",
+      "phase": "the four lines",
+      "note": "CI noise and timestamps stripped, \u00b12 lines of context kept",
       "out": [
         "Collecting dependencies...",
         "tests/test_orders.py::test_total_with_tax FAILED",
         "E   AssertionError: expected 1100, got 1000",
         "1 failed, 287 passed in 12.4s",
         "##[error]Process completed with exit code 1"
+      ]
+    },
+    {
+      "cmd": "ci.py failing",
+      "phase": "or skip the file",
+      "note": "same result straight from GitHub Actions or GitLab: run, failing step, error",
+      "out": [
+        "run 34358780023 docs.yml \u2014 failure",
+        "failing step: build",
+        "# 0 jobs: the workflow failed before any step \u2014 bad YAML or a bad expression"
       ]
     }
   ]
