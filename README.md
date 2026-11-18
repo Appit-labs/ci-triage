@@ -19,14 +19,14 @@ One command for each agent — the skill is plain Markdown plus a script, so not
 
 ```bash
 # Claude Code (plugin, stays updatable)
-claude plugin marketplace add ibrahimbdr/appit-skills
+claude plugin marketplace add Appit-labs/appit-skills
 claude plugin install ci-triage@appit-skills
 
 # pi
-pi install git:github.com/ibrahimbdr/ci-triage
+pi install git:github.com/Appit-labs/ci-triage
 
 # any agent that reads a skills directory
-git clone git@github.com:ibrahimbdr/ci-triage.git
+git clone git@github.com:Appit-labs/ci-triage.git
 cp -r ci-triage/skills/ci-triage ~/.claude/skills/      # or ~/.codex/skills/, .cursor/skills/, …
 ```
 
@@ -72,7 +72,7 @@ network destination at runtime.
 ## Part of the Appit collection
 
 Browser QA · CI triage · Postgres · runbooks · SSH · Trello · cloud browsers · OpenDesign · Blender —
-one marketplace: [appit-skills](https://github.com/ibrahimbdr/appit-skills).
+one marketplace: [appit-skills](https://github.com/Appit-labs/appit-skills).
 
 ## License
 
