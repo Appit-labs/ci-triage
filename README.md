@@ -45,8 +45,8 @@ git clone git@github.com:Appit-labs/ci-triage.git
 cp -r ci-triage/skills/ci-triage ~/.claude/skills/      # or ~/.codex/skills/, .cursor/skills/, …
 ```
 
-> **npm name.** `ci-triage` on npm is an unrelated package by another author. The one published from this repository is
-> `@appitlabs/ci-triage` — `npm i @appitlabs/ci-triage`.
+> **npm name.** `ci-triage` on npm belongs to another author. This skill is published as
+> `@appitlabs/ci-triage`, and the whole collection as `@appitlabs/skills`.
 
 ## Use
 
