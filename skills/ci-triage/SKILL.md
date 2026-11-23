@@ -7,6 +7,7 @@ allowed-tools:
 permissions:
   - shell
   - env
+license: MIT
 ---
 
 # CI triage
@@ -22,6 +23,8 @@ python3 "$SKILL_DIR/scripts/ci.py" failing [--branch BR] [--repo OWNER/NAME] [--
 Output shape: the run/pipeline URL, the failing job, the exact failing step, then
 the extracted error block. Full log stays on the provider; only the block enters
 your context.
+
+**Not for:** a failure you can reproduce locally (run the command), or writing the fix — this finds and explains the error, the fix is your call. Providers other than GitHub/GitLab: save the log and use `extract`.
 
 ## Portability
 
@@ -77,6 +80,21 @@ SKILL_DIR=~/.claude/skills/ci-triage     # or ~/.codex/skills/…, ~/.pi/agent/s
    plainly instead of re-running the pipeline repeatedly.
 3. Only re-run CI after you have a reason to believe the cause is gone. A blind
    re-run is how a flaky test becomes somebody else's problem.
+
+## When more than one job failed
+
+`failing` prints the first two failed jobs, each with its id. Read them **together**,
+not one after the other: the second is often the first with a different name.
+
+| Situation | What it means |
+| --- | --- |
+| 1 job failed | one cause, one fix |
+| 2 jobs, same error text | one cause — fix it once |
+| 2+ jobs, different errors | genuinely independent: `logs --job <id>` for each, in parallel subagents if your agent has them, otherwise serially; each returns its own four lines |
+| every job failed at once | not your change — a workflow file, a missing secret, or the runner. Read the earliest failure only |
+
+Do not open a third job until the first two disagree about the cause. Fixing one job
+and re-running is cheaper than reading everything and guessing.
 
 ## Limits
 
