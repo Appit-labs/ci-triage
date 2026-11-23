@@ -45,6 +45,9 @@ git clone git@github.com:Appit-labs/ci-triage.git
 cp -r ci-triage/skills/ci-triage ~/.claude/skills/      # or ~/.codex/skills/, .cursor/skills/, …
 ```
 
+> **npm name.** `ci-triage` on npm is an unrelated package by another author. The one published from this repository is
+> `@appitlabs/ci-triage` — `npm i @appitlabs/ci-triage`.
+
 ## Use
 
 - **Why is my branch red** — `scripts/ci.py failing` — resolves repo, branch, newest failed run, failing step, error
