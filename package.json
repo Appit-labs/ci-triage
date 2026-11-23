@@ -1,6 +1,6 @@
 {
-  "name": "ci-triage",
-  "version": "0.1.1",
+  "name": "@appitlabs/ci-triage",
+  "version": "0.1.2",
   "description": "One command from \"CI is red\" to the failing step and the extracted error, for GitHub Actions and GitLab CI.",
   "license": "MIT",
   "keywords": [
@@ -33,5 +33,9 @@
       "name": "Appit Labs",
       "url": "https://github.com/Appit-Labs"
     }
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }
